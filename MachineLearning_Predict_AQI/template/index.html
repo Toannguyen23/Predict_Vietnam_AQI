@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Phân tích dự đoán</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+  <center>
+<div class = "login">
+<h1>Phân tích chất lượng ô nhiễm không khí tại khu vực đang sinh sống</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+        <input class="form-input" type="text" name="Humidity" placeholder="Chỉ số độ ẩm"><br>
+        <input class="form-input" type="text" name="CO" placeholder="Chỉ số CO"><br>
+        <input class="form-input" type="text" name="NO2" placeholder="Chỉ số NO2"><br>
+        <input class="form-input" type="text" name="O3" placeholder="Chỉ số O3"><br>
+        <input class="form-input" type="text" name="PM10" placeholder="Chỉ số bụi mịn PM10"><br>
+        <input class="form-input" type="text" name="PM2.5" placeholder="Chỉ số bụi mịn PM2.5"><br>
+        <input class="form-input" type="text" name="SO2" placeholder="Chỉ số SO2"><br>
+        <input class="form-input" type="text" name="Temperature" placeholder="Nhiệt độ"><br>
+        <input class="form-input" type="text" name="Wind" placeholder="Tốc độ gió"><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Dự báo</button>
+
+    </form>
+     <br>
+   <br>
+   {{ prediction_text }}
+   <!--Tao một div du doan-->
+   <br>
+   <br>
+   {{result_predict}}
+   
+
+   </div>
+</div>
+  </center>
+</body>
+</html>
